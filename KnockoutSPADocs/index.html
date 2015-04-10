@@ -30,15 +30,8 @@
             </ul>
         </div>
         <div class="col-lg-8">
-            <div class="dropdown well" data-bind="with: selectedItem">
-                <h2>
-                    Title:
-                    <input class="input-xxlarge" type="text" data-bind="value: title"/>
-                </h2>
-                <div>
-                    <h3>Body:</h3>
-                    <textarea class="input-block-level" data-bind="value: body"></textarea>
-                </div>
+            <div class="dropdown well" data-bind="template: {name: selectedItem().templateName, data: selectedItem}">
+
             </div>
         </div>
     </div>
@@ -51,6 +44,15 @@
         </div>
     </div>
 </div>
-
+<script id="document-template" type="text/html">
+    <h2>
+        Title:
+        <input class="input-xxlarge" type="text" data-bind="value: title" />
+    </h2>
+    <div>
+        <h3>Body:</h3>
+        <textarea class="input-block-level" data-bind="value: body"></textarea>
+    </div>
+</script>
 </body>
 </html>
