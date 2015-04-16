@@ -2,14 +2,17 @@
 <html>
 <head>
     <title>Knockout JS Demo</title>
+    <link type="text/css" rel="stylesheet" href="Content/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="Content/Site.css" />
+
     <script type="text/javascript" src="Scripts/libs/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="Scripts/libs/knockout-3.3.0.debug.js"></script>
     <script type="text/javascript" src="Scripts/libs/base.js"></script>
     <script type="text/javascript" src="Scripts/document.js"></script>
     <script type="text/javascript" src="Scripts/knockout-docs.js"></script>
     <script type="text/javascript" src="Scripts/main.js"></script>
-    <link type="text/css" rel="stylesheet" href="Content/bootstrap.css"/>
-    <link type="text/css" rel="stylesheet" href="Content/Site.css"/>
+    <script type="text/javascript" src="Scripts/spreadsheet.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -44,15 +47,30 @@
         </div>
     </div>
 </div>
-<script id="document-template" type="text/html">
-    <h2>
-        Title:
-        <input class="input-xxlarge" type="text" data-bind="value: title" />
-    </h2>
-    <div>
-        <h3>Body:</h3>
-        <textarea class="input-block-level" data-bind="value: body"></textarea>
-    </div>
-</script>
+    <script id="document-template" type="text/html">
+        <h2>
+            Title:
+            <input class="input-xxlarge" type="text" data-bind="value: title"/>
+        </h2>
+        <div>
+            <h3>Body:</h3>
+            <textarea class="input-block-level" data-bind="value: body"></textarea>
+        </div>
+    </script>
+    <script id="spreadsheet-template" type="text/html">
+        <h2>
+            Title:
+            <input class="input-xxlarge" type="text" data-bind="value: title" />
+        </h2>
+        <table class="spreadsheet">
+            <tbody data-bind="foreach: rows">
+                <tr data-bind="foreach: cells">
+                    <td>
+                        <input type="text" data-bind="value: value" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
 </body>
 </html>

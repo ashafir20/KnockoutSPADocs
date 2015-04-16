@@ -1,11 +1,13 @@
 ﻿var Spreadsheet = Base.extend({
     templateName: "spreadsheet-template",
-    constructor: function(title, numRows, numCols) {
+    constructor: function (title, numRows, numCols) {
         this.title = ko.observable(title);
         this.numRows = ko.observable(numRows);
         this.numCols = ko.observable(numCols);
 
         this.rows = ko.observableArray();
+
+        this.init();
     },
     init: function() {
         var row;
