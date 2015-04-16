@@ -3,9 +3,10 @@
 <head>
     <title>Knockout JS Demo</title>
     <link type="text/css" rel="stylesheet" href="Content/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="Content/Site.css" />
+    <link type="text/css" rel="stylesheet" href="Content/Site.css"/>
 
     <script type="text/javascript" src="Scripts/libs/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="Scripts/libs/bootstrap.js"></script>
     <script type="text/javascript" src="Scripts/libs/knockout-3.3.0.debug.js"></script>
     <script type="text/javascript" src="Scripts/libs/base.js"></script>
     <script type="text/javascript" src="Scripts/document.js"></script>
@@ -25,6 +26,16 @@
     </div>
     <div class="row">
         <div class="col-lg-4">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dLabel" data-toggle="dropdown" aria-expanded="true">
+                    Create
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a tabindex="-1" role="menuitem" href="#" data-bind="click: createDocument">Dropdown</a></li>
+                    <li><a tabindex="-1" role="menuitem" href="#" data-bind="click: createSpreadsheet">Spreadsheet</a></li>
+                </ul>
+            </div>
             <ul class="unstyled dropdown well" data-bind="foreach: items">
                 <li>
                     <i class="icon-file"></i>
